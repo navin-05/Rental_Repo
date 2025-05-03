@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-gold {
+  color: #d4af37;
+}
+
+.fill-gold {
+  fill: #d4af37;
+}
+
+.bg-gold {
+  background-color: #d4af37;
+}
+
+.border-gold {
+  border-color: #d4af37;
+}
+
+.hover\:text-gold:hover {
+  color: #d4af37;
+}
+
+.focus\:ring-gold:focus {
+  --tw-ring-color: #d4af37;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.8), 0 0 30px rgba(0, 123, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+}
+
+.calendar-glow {
+  animation: glow 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.calendar-glow:hover, .calendar-glow:focus {
+  animation: none;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.9), 0 0 25px rgba(0, 123, 255, 0.6);
+  border-color: rgba(0, 123, 255, 0.8);
+}
+
+/* Image carousel transitions */
+.carousel-slide-enter {
+  transform: translateX(100%);
+}
+.carousel-slide-enter-active {
+  transform: translateX(0%);
+  transition: transform 300ms ease-in-out;
+}
+.carousel-slide-exit {
+  transform: translateX(0%);
+}
+.carousel-slide-exit-active {
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
+}
+
+/* Responsive image optimizations */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%; /* 4:3 aspect ratio */
+}
+
+@media (min-width: 640px) {
+  .image-container {
+    padding-bottom: 56.25%; /* 16:9 aspect ratio for desktop */
+  }
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #f3f4f6;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+button {
+  background-color: #d4af37;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #b38e2e;
+}
+
+header, footer {
+  background-color: #111;
+  color: #fff;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #d4af37;
+}
+
+.card {
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h3, .card p {
+  margin: 10px;
+}
+
+.card .price {
+  color: #d4af37;
+  font-weight: bold;
+}
